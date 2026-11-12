@@ -177,4 +177,4 @@ including [desktop visibility and eject behavior](docs/troubleshooting.md#drives
 
 ## License
 
-[MIT](LICENSE). Copyright (c) 2026 Veyl contributors.
+[MIT](LICENSE). Copyright (c) 2026 poizdev.
