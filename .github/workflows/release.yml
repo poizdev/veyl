@@ -1,0 +1,31 @@
+# Historical filename; source-only checks, never a binary release.
+name: Manual source checks
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - name: Check Go formatting
+        shell: bash
+        run: |
+          unformatted=$(gofmt -l cmd internal)
+          if [ -n "$unformatted" ]; then
+            printf '%s\n' "$unformatted"
+            exit 1
+          fi
+      - name: Test
+        run: go test ./...
+      - name: Vet
+        run: go vet ./...

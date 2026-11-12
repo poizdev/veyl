@@ -1,0 +1,86 @@
+# Local builds and test output
+/bin/
+/veyl
+*.test
+/coverage.out
+
+# Disposable integration fixtures (retained when cleanup fails)
+/.veyl-fuse-test-*/
+/.veyl-storage-test-*/
+/.veyl-bridge-test-*/
+/.veyl-parent-test-*/
+/.veyl-cli-test-*/
+/veyl-cli-desktop-test-*/
+/veyl-desktop-test-*/
+
+# Local mountpoints, initialization output and demonstration bundles
+/store/
+/mount/
+/runtime/
+/mnt/
+/my-veyl/
+/veyl-demo/
+/veyl.json
+
+# Local tooling, credentials and environment configuration
+/.agents/
+/.codex/
+/.aws/
+.env
+.env.*
+
+# Local stores/configuration and decrypted/runtime paths at any depth.
+# Keep Go source and synthetic fixtures eligible for publication.
+store/
+cipher/
+mount/
+mnt/
+runtime/
+views/
+veyl.json
+gocryptfs.conf
+gocryptfs.diriv
+gocryptfs.longname.*
+*.sock
+*.socket
+*.pid
+*.lock
+
+# Credentials, private keys and local configuration
+.aws/
+.ssh/
+.gnupg/
+.netrc
+.npmrc
+credentials
+credentials.json
+credentials.yaml
+credentials.yml
+config.local.*
+*.local.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# Logs, caches, editor files and generated output
+*.log
+.cache/
+coverage/
+coverage.*
+*.prof
+*.pprof
+*.out
+/dist/
+/build/
+graphify-out/
+*.tar.gz
+*.zip
+*.swp
+*.swo
+*~
+.DS_Store
